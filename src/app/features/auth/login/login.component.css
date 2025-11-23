@@ -1,0 +1,4 @@
+a[routerLink] {
+  cursor: pointer;
+  user-select: none;
+}
