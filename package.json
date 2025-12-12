@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "sonar": "sonar-scanner -Dsonar.login=b22f290b3b9925974e58325c0d2fa82b1b2d6fa6"
+    "sonar": "sonar-scanner -Dsonar.login=TOKEN"
   },
   "private": true,
   "dependencies": {
