@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   signal,
   inject,
+  OnInit,
 } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { LaboratoryService } from '../service/laboratory.service';
@@ -59,7 +60,7 @@ import { ParameterService } from '../../parameter/service/parameter.service';
   imports: [ReactiveFormsModule, EntityTableComponent, FullScreenFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LaboratoryPageComponent {
+export class LaboratoryPageComponent implements OnInit{
   private fb = new FormBuilder();
   private service = inject(LaboratoryService);
   private auth = inject(AuthService);

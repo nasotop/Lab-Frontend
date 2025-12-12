@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../features/auth/services/auth.service';
 
@@ -84,7 +84,7 @@ import { AuthService } from '../../features/auth/services/auth.service';
     `,
   ],
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   private auth = inject(AuthService);
   private router = inject(Router);
 

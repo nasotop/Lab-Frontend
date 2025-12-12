@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   signal,
   computed,
+  OnInit,
 } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { inject } from '@angular/core';
@@ -21,7 +22,7 @@ import { LoginResponse } from '../model/login-response';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   private readonly fb = inject(FormBuilder);
   private readonly loginService = inject(AuthService);
   private readonly router = inject(Router);

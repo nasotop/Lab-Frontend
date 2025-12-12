@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   inject,
   signal,
+  OnInit,
 } from '@angular/core'
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms'
 
@@ -63,7 +64,7 @@ import {
   imports: [ReactiveFormsModule, EntityTableComponent, FullScreenFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TestTypePageComponent {
+export class TestTypePageComponent implements OnInit {
   private fb = new FormBuilder()
   private service = inject(TestTypeService)
   private paramService = inject(ParameterService)

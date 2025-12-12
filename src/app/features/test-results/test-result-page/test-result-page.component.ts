@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   signal,
   inject,
+  OnInit,
 } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { TestResultsService } from '../service/test-results.service';
@@ -55,7 +56,7 @@ import { TestResultDto } from '../model/test-result.dto';
   imports: [ReactiveFormsModule, EntityTableComponent, FullScreenFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TestResultPageComponent {
+export class TestResultPageComponent implements OnInit{
   private fb = new FormBuilder();
   private service = inject(TestResultsService);
   private orderTestService = inject(OrderTestService);

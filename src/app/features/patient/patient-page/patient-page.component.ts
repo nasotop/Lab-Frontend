@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   signal,
   inject,
+  OnInit,
 } from '@angular/core';
 import {
   ReactiveFormsModule,
@@ -64,7 +65,7 @@ import { UserDto } from '../../user/model/user.model';
   imports: [ReactiveFormsModule, EntityTableComponent, FullScreenFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PatientPageComponent {
+export class PatientPageComponent implements OnInit{
   private fb = new FormBuilder();
   private service = inject(PatientService);
   private userService = inject(UserService);
