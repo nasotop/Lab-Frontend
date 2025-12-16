@@ -6,9 +6,9 @@ import { Observable, timeout } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:8082/api';
+  private readonly baseUrl = 'http://localhost:8082/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
   get<T>(
     endpoint: string,
     params?: Record<string, string | number>,
@@ -57,11 +57,11 @@ export class ApiService {
       .pipe(timeout(10000));
   }
 
-  private resolve(endpoint: string): string {
+  private  resolve(endpoint: string): string {
     return `${this.baseUrl}/${endpoint}`;
   }
 
-  private buildHeaders(headers?: Record<string, string>): HttpHeaders {
+  private  buildHeaders(headers?: Record<string, string>): HttpHeaders {
     let result = new HttpHeaders();
     if (!headers) return result;
 
@@ -72,7 +72,7 @@ export class ApiService {
     return result;
   }
 
-  private buildParams(params?: Record<string, string | number>): HttpParams {
+  private  buildParams(params?: Record<string, string | number>): HttpParams {
     let result = new HttpParams();
     if (!params) return result;
 

@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   signal,
   inject,
+  OnInit,
 } from '@angular/core'
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms'
 import { UserService } from '../service/user.service'
@@ -54,10 +55,10 @@ import { FullScreenFormComponent, FullFormField } from '../../../shared/componen
   imports: [ReactiveFormsModule, EntityTableComponent, FullScreenFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserPageComponent {
-  private fb = new FormBuilder()
-  private service = inject(UserService)
-  private auth = inject(AuthService)
+export class UserPageComponent implements OnInit{
+  private readonly fb = new FormBuilder()
+  private readonly service = inject(UserService)
+  private readonly auth = inject(AuthService)
 
   loading = signal(false)
   showForm = signal(false)

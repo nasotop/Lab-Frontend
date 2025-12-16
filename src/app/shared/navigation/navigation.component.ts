@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../features/auth/services/auth.service';
 
@@ -84,14 +84,14 @@ import { AuthService } from '../../features/auth/services/auth.service';
     `,
   ],
 })
-export class NavigationComponent {
-  private auth = inject(AuthService);
-  private router = inject(Router);
+export class NavigationComponent implements OnInit {
+  private readonly auth = inject(AuthService);
+  private readonly router = inject(Router);
 
   loggedIn = signal(false);
   isAdmin = signal(false);
 
-  private hiddenRoutes = ['/login', '/register', '/forgot-password'];
+  private readonly hiddenRoutes = ['/login', '/register', '/forgot-password'];
   shouldShowMenu = signal(false);
 
   ngOnInit() {

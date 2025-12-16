@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   signal,
   inject,
+  OnInit,
 } from '@angular/core';
 import {
   ReactiveFormsModule,
@@ -64,11 +65,11 @@ import { UserDto } from '../../user/model/user.model';
   imports: [ReactiveFormsModule, EntityTableComponent, FullScreenFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PatientPageComponent {
-  private fb = new FormBuilder();
-  private service = inject(PatientService);
-  private userService = inject(UserService);
-  private auth = inject(AuthService);
+export class PatientPageComponent implements OnInit{
+  private readonly fb = new FormBuilder();
+  private readonly service = inject(PatientService);
+  private readonly userService = inject(UserService);
+  private readonly auth = inject(AuthService);
 
   loading = signal(false);
   patients = signal<any[]>([]);

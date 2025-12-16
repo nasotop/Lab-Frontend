@@ -6,8 +6,8 @@ import { UserDto } from '../model/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private api = inject(ApiService);
-  private base = 'user';
+  private readonly api = inject(ApiService);
+  private readonly base = 'user';
 
   getAll(): Observable<ResultDto<UserDto[]>> {
     return this.api.get<ResultDto<UserDto[]>>(`${this.base}/all`);
