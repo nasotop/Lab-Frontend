@@ -6,8 +6,8 @@ import { TestTypeDto } from '../model/test-type-dto.model'
 
 @Injectable({ providedIn: 'root' })
 export class TestTypeService {
-  private api = inject(ApiService)
-  private base = 'test-type'
+  private readonly api = inject(ApiService)
+  private readonly base = 'test-type'
 
   getAll(): Observable<ResultDto<TestTypeDto[]>> {
     return this.api.get<ResultDto<TestTypeDto[]>>(`${this.base}/get-all-test-types`)

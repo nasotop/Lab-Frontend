@@ -7,8 +7,8 @@ import { ApiService } from '../../../core/http/api.service';
 
 @Injectable({ providedIn: 'root' })
 export class OrderTestService {
-  private http = inject(ApiService);
-  private baseUrl = 'order-test';
+  private readonly http = inject(ApiService);
+  private readonly baseUrl = 'order-test';
 
   getAll(): Observable<ResultDto<OrderTestDto[]>> {
     return this.http.get<ResultDto<OrderTestDto[]>>(

@@ -24,7 +24,7 @@ import { CommonModule } from '@angular/common';
 export class FormErrorsComponent {
   @Input() control!: AbstractControl | null;
 
-  private messages: Record<string,(err:any)=>string> = {
+  private readonly messages: Record<string,(err:any)=>string> = {
     required: () => 'Este campo es obligatorio.',
     minlength: (e) => `Debe tener al menos ${e.requiredLength} caracteres.`,
     maxlength: (e) => `Debe tener máximo ${e.requiredLength} caracteres.`,

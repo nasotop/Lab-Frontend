@@ -6,8 +6,8 @@ import { OrderDto } from '../model/order-dto.model';
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
-  private api = inject(ApiService);
-  private base = 'order';
+  private readonly api = inject(ApiService);
+  private readonly base = 'order';
 
   getAll(): Observable<ResultDto<OrderDto[]>> {
     return this.api.get<ResultDto<OrderDto[]>>(`${this.base}/all`);

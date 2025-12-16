@@ -6,7 +6,7 @@ import { catchError, map, Observable, of } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router, private token: TokenService) {}
+  constructor(private readonly auth: AuthService, private readonly router: Router, private readonly token: TokenService) {}
 
   canActivate(): Observable<boolean> {
     const raw = this.token.get();

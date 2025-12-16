@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   signal,
   inject,
+  OnInit,
 } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 
@@ -64,14 +65,14 @@ import { ParameterService } from '../../parameter/service/parameter.service';
   imports: [ReactiveFormsModule, EntityTableComponent, FullScreenFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OrderTestPageComponent {
-  private fb = new FormBuilder();
-  private service = inject(OrderTestService);
-  private orderService = inject(OrderService);
-  private labService = inject(LaboratoryService);
-  private testTypeService = inject(TestTypeService);
-  private parameterService = inject(ParameterService);
-  private auth = inject(AuthService);
+export class OrderTestPageComponent implements OnInit{
+  private readonly fb = new FormBuilder();
+  private readonly service = inject(OrderTestService);
+  private readonly orderService = inject(OrderService);
+  private readonly labService = inject(LaboratoryService);
+  private readonly testTypeService = inject(TestTypeService);
+  private readonly parameterService = inject(ParameterService);
+  private readonly auth = inject(AuthService);
 
   loading = signal(false);
   isAdmin = signal(false);

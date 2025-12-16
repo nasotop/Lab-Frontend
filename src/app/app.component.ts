@@ -6,7 +6,6 @@ import { NavigationComponent } from "./shared/navigation/navigation.component";
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
   imports: [RouterOutlet, NavigationComponent],
 })
 export class AppComponent {

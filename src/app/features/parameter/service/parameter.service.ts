@@ -6,8 +6,8 @@ import { ParameterDto } from '../model/parameter.model'
 
 @Injectable({ providedIn: 'root' })
 export class ParameterService {
-  private api = inject(ApiService)
-  private base = 'parameter'
+  private readonly api = inject(ApiService)
+  private readonly base = 'parameter'
 
   getOrderStatus(): Observable<ResultDto<ParameterDto[]>> {
     return this.api.get<ResultDto<ParameterDto[]>>(`${this.base}/get-order-status`)

@@ -5,7 +5,7 @@ import { TokenService } from "../http/token.service";
 
 @Injectable({ providedIn: 'root' })
 export class RoleGuard implements CanActivate {
-  constructor(private auth: TokenService, private router: Router) {}
+  constructor(private readonly auth: TokenService, private readonly router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const expected = route.data['roles'] as string[];
